@@ -42,6 +42,7 @@ class CategoryController extends Controller
             'actor' => ['nullable', 'string', 'max:255'],
             'startYear' => ['nullable', 'integer'],
             'endYear' => ['nullable', 'integer'],
+            'decade' => ['nullable', 'integer', 'min:1900', 'multiple_of:10'],
         ]);
 
         // Get movies ordered by latest NZBs that are attached to them.
@@ -60,6 +61,7 @@ class CategoryController extends Controller
                 'actor'=> $validated['actor'] ?? null,
                 'startYear' => $validated['startYear'] ?? null,
                 'endYear' => $validated['endYear'] ?? null,
+                'decade' => $validated['decade'] ?? null,
             ]);
 
         $label = strlen($category->name) <= 3 ? strtoupper($category->name) : ucfirst($category->name);

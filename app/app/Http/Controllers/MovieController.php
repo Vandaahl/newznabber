@@ -41,6 +41,7 @@ class MovieController extends Controller
                 'actor'=> $validated['actor'] ?? null,
                 'startYear' => $validated['startYear'] ?? null,
                 'endYear' => $validated['endYear'] ?? null,
+                'decade' => $validated['decade'] ?? null,
             ]);
 
         return view('welcome', [
